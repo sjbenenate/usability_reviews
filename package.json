@@ -1,0 +1,18 @@
+{
+  "name": "usability-reviews",
+  "version": "0.1.0",
+  "workspaces": [
+    "packages/ui"
+  ],
+  "scripts": {
+    "ui-dev": "cd packages/ui && vite",
+    "ui-build": "cd packages/ui && vite build",
+    "ui-build:dev": "cd packages/ui && vite build --mode development",
+    "ui-lint": "cd packages/ui && eslint .",
+    "ui-preview": "cd packages/ui && vite preview"
+  },
+  "devDependencies": {},
+  "trustedDependencies": [
+    "@swc/core"
+  ]
+}
