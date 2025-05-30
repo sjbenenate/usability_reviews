@@ -1,7 +1,7 @@
 import express from 'express';
 
 const PORT = Number(process.env.SERVER_PORT) || 3000;
-console.log(PORT);
+
 const server = express();
 
 const router = express.Router();
@@ -15,3 +15,5 @@ server.use(router);
 server.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
+
+export default server;
