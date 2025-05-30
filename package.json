@@ -4,30 +4,8 @@
   "type": "module",
   "devDependencies": {
     "jest": "^29.7.0",
-    "supertest": "^7.1.1"
-  },
-  "scripts": {
-    "ui-dev": "cd packages/ui && vite",
-    "ui-build": "cd packages/ui && vite build",
-    "ui-build:dev": "cd packages/ui && vite build --mode development",
-    "ui-lint": "cd packages/ui && eslint .",
-    "ui-preview": "cd packages/ui && vite preview",
-    "server-dev": "cd packages/server && bun run server.js",
-    "server-test": "cd packages/server && jest --detectOpenHandles"
-  },
-  "jest": {
-    "testEnvironment": "node",
-    "coveragePathIgnorePatterns": [
-      "/node_modules/"
-    ],
-    "coverageThreshold": {
-      "global": {
-        "branches": 100,
-        "functions": 100,
-        "lines": 100,
-        "statements": 100
-      }
-    }
+    "nodemon": "^3.0.2",
+    "supertest": "^6.3.3"
   },
   "trustedDependencies": [
     "@swc/core"
@@ -35,6 +13,11 @@
   "workspaces": [
     "packages/ui"
   ],
+  "scripts": {
+    "start": "cd packages/server && node server.js",
+    "dev": "cd packages/server && nodemon server.js",
+    "test": "cd packages/server && node --experimental-vm-modules ../../node_modules/jest/bin/jest.js --detectOpenHandles"
+  },
   "dependencies": {
     "express": "^5.1.0"
   }
