@@ -16,17 +16,14 @@ server.on('error', (error) => {
   console.error('Server error:', error);
 });
 
-const serverInstance = server.listen(PORT, () => {
-  console.log(`server is running on port ${PORT}`);
-});
-
-/*const startServer = async () => {
-  server.runningInstance = serverInstance;
+server.start = async () => {
+  server._runningInstance = server.listen(PORT, () => {
+    console.log(`server is running on port ${PORT}`);
+  });
 };
 
-const stopServer = (done) => {
-  server.runningInstance.close(done);
+server.stop = (done) => {
+  server._runningInstance.close(done);
 };
 
-export { server, startServer, stopServer };*/
-export { server, serverInstance };
+export { server };

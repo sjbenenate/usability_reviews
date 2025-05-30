@@ -1,12 +1,14 @@
 import request from 'supertest';
 import { jest } from '@jest/globals';
-//import jest from 'jest';
-//import { server, startServer, stopServer } from './server.js';
-import { server, serverInstance } from './server.js';
+import { server } from './server.js';
 
 describe('Server Endpoints', () => {
   afterAll((done) => {
-    serverInstance.close(done);
+    server.stop(done);
+  });
+
+  beforeAll(() => {
+    server.start();
   });
 
   it('should return hello world', async () => {
