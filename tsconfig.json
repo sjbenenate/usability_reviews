@@ -7,7 +7,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./packages/ui/src/*"]
+      "@/*": ["ui/src/*"]
     },
     "noImplicitAny": false,
     "noUnusedParameters": false,

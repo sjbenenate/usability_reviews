@@ -2,6 +2,7 @@
   "name": "usability-reviews",
   "version": "0.1.0",
   "type": "module",
+  "main": "main.js",
   "devDependencies": {
     "jest": "^29.7.0",
     "nodemon": "^3.0.2",
@@ -14,9 +15,9 @@
     "packages/ui"
   ],
   "scripts": {
-    "start": "cd packages/server && node server.js",
-    "dev": "cd packages/server && nodemon server.js",
-    "test": "cd packages/server && node --experimental-vm-modules ../../node_modules/jest/bin/jest.js --detectOpenHandles"
+    "start": "node main.js",
+    "dev": "cd server && nodemon server.js",
+    "test": "cd server && node --experimental-vm-modules ../node_modules/jest/bin/jest.js --detectOpenHandles"
   },
   "dependencies": {
     "express": "^5.1.0"
