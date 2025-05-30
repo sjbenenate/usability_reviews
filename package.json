@@ -1,18 +1,22 @@
 {
   "name": "usability-reviews",
   "version": "0.1.0",
-  "workspaces": [
-    "packages/ui"
-  ],
+  "devDependencies": {},
   "scripts": {
     "ui-dev": "cd packages/ui && vite",
     "ui-build": "cd packages/ui && vite build",
     "ui-build:dev": "cd packages/ui && vite build --mode development",
     "ui-lint": "cd packages/ui && eslint .",
-    "ui-preview": "cd packages/ui && vite preview"
+    "ui-preview": "cd packages/ui && vite preview",
+    "server-dev": "cd packages/server && bun run server.js"
   },
-  "devDependencies": {},
   "trustedDependencies": [
     "@swc/core"
-  ]
+  ],
+  "workspaces": [
+    "packages/ui"
+  ],
+  "dependencies": {
+    "express": "^5.1.0"
+  }
 }
