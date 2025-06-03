@@ -1,3 +1,6 @@
 import { server } from './server/server.js';
+import 'dotenv/config';
 
-server.start();
+const PORT = process.env.PORT || 3000;
+
+server.start(PORT);

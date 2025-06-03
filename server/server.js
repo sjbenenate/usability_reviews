@@ -1,7 +1,5 @@
 import express from 'express';
 
-const PORT = process.env.PORT || 3000;
-
 const server = express();
 
 const router = express.Router();
@@ -16,9 +14,9 @@ server.on('error', (error) => {
   console.error('Server error:', error);
 });
 
-server.start = async () => {
-  server._runningInstance = server.listen(PORT, () => {
-    console.log(`server is running on port ${PORT}`);
+server.start = async (port) => {
+  server._runningInstance = server.listen(port, () => {
+    console.log(`server is running on port ${port}`);
   });
 };
 
