@@ -11,13 +11,10 @@
   "trustedDependencies": [
     "@swc/core"
   ],
-  "workspaces": [
-    "packages/ui"
-  ],
   "scripts": {
     "start": "node main.js",
     "dev": "nodemon main.js",
-    "test": "cd server && node --experimental-vm-modules ../node_modules/jest/bin/jest.js --detectOpenHandles"
+    "test": "cd src && node --experimental-vm-modules ../node_modules/jest/bin/jest.js --detectOpenHandles"
   },
   "dependencies": {
     "dotenv": "^16.5.0",
