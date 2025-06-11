@@ -1,7 +1,20 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+'use client';
+
+import Image from 'next/image';
+import styles from './page.module.css';
+import { useEffect } from 'react';
 
 export default function Home() {
+  useEffect(() => {
+    const testFetch = async () => {
+      const res = await fetch('/api/users');
+      console.log(res);
+      const data = await res.json();
+      console.log(data);
+    };
+    testFetch();
+  }, []);
+
   return (
     <div className={styles.page}>
       <main className={styles.main}>
