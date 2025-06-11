@@ -4,7 +4,7 @@ import { clerkClient, requireAuth, getAuth } from '@clerk/express';
 const router = Router();
 
 router.get('/', (req, res) => {
-  res.status(200).json('user base route fetched');
+  res.status(200).json(`user base route fetched at time: ${Date.now()}`);
 });
 
 // Use requireAuth() to protect this route

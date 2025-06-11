@@ -1,19 +1,17 @@
-'use client';
-
 import Image from 'next/image';
 import styles from './page.module.css';
-import { useEffect } from 'react';
 
-export default function Home() {
-  useEffect(() => {
-    const testFetch = async () => {
-      const res = await fetch('/api/users');
-      console.log(res);
-      const data = await res.json();
-      console.log(data);
-    };
-    testFetch();
-  }, []);
+const testAPIConnection = async () => {
+  const url = `${process.env.API_DOMAIN}/api/users`;
+  const res = await fetch(url, { cache: 'no-cache' });
+  console.log(res);
+  const data = await res.json();
+  console.log(data);
+  return data;
+};
+
+const Home = async () => {
+  const apiData = await testAPIConnection();
 
   return (
     <div className={styles.page}>
@@ -58,6 +56,7 @@ export default function Home() {
             Read our docs
           </a>
         </div>
+        <div>{apiData}</div>
       </main>
       <footer className={styles.footer}>
         <a
@@ -105,4 +104,6 @@ export default function Home() {
       </footer>
     </div>
   );
-}
+};
+
+export default Home;
