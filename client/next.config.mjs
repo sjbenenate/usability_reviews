@@ -1,7 +1,4 @@
-import { configDotenv } from 'dotenv';
-
 /** @type {import('next').NextConfig} */
-configDotenv;
 const nextConfig = {
   async rewrites() {
     const API_DOMAIN = process.env.API_DOMAIN;

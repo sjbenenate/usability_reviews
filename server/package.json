@@ -2,7 +2,7 @@
   "name": "usability-reviews",
   "version": "0.1.0",
   "type": "module",
-  "main": "main.js",
+  "main": "src/main.js",
   "devDependencies": {
     "jest": "^29.7.0",
     "nodemon": "^3.0.2",
@@ -12,8 +12,8 @@
     "@swc/core"
   ],
   "scripts": {
-    "start": "node main.js",
-    "dev": "nodemon main.js",
+    "start": "node src/main.js",
+    "dev": "nodemon src/main.js",
     "test": "cd src && node --experimental-vm-modules ../node_modules/jest/bin/jest.js --detectOpenHandles"
   },
   "dependencies": {
