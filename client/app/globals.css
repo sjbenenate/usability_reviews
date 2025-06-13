@@ -27,6 +27,7 @@ body {
 }
 
 .logo-color {
+  /* filter generator script given rgb hex string https://codepen.io/sosuke/pen/Pjoqqp */
   filter: invert(92%) sepia(93%) saturate(5731%) hue-rotate(102deg)
     brightness(107%) contrast(102%);
 }
