@@ -1,8 +1,8 @@
 const LoadingSkeleton = () => {
   return (
-    <section>
+    <div>
       <h1>Page is Loading</h1>
-    </section>
+    </div>
   );
 };
 

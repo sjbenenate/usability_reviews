@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 const ReviewContentPage = async () => {
   return (
@@ -13,6 +14,9 @@ const ReviewContentPage = async () => {
           height={100}
           priority
         />
+        <button>
+          <Link href="/reviews/add">Add Review</Link>
+        </button>
       </main>
     </div>
   );
