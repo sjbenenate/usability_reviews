@@ -1,13 +1,13 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { getUsers } from '@/lib/users';
 
 const testAPIConnection = async () => {
-  const url = `${process.env.API_DOMAIN}/api/users`;
-  const res = await fetch(url, { cache: 'no-cache' });
-  console.log(res);
-  const data = await res.json();
-  console.log(data);
-  return data;
+  //const url = `${process.env.API_DOMAIN}/api/users`;
+  //const res = await fetch(url, { cache: 'no-cache' });
+  const users = await getUsers();
+  console.log(users);
+  return users;
 };
 
 const Home = async () => {
