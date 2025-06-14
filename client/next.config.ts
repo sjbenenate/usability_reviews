@@ -7,6 +7,7 @@ const nextConfig: NextConfig = {
 
     return [
       {
+        // This applies to client side components only, server components use the environment variable directly
         source: '/api/:path*',
         destination: `${API_DOMAIN}/api/:path*`,
       },
