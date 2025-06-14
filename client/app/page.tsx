@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 const testAPIConnection = async () => {
   const url = `${process.env.API_DOMAIN}/api/users`;
@@ -29,7 +30,7 @@ const Home = async () => {
           <h2>Debug Section</h2>
           {apiData}
           <p>
-            <a href="/reviews">Reviews Page</a>
+            <Link href="/reviews">Reviews Page</Link>
           </p>
         </div>
       </main>
