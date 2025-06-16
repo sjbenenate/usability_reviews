@@ -1,18 +1,21 @@
 import { clerkMiddleware, createRouteMatcher } from '@clerk/nextjs/server';
 
+// https://nextjs.org/docs/app/api-reference/file-conventions/middleware
+
 const isProtectedRoute = createRouteMatcher(['/reviews/add(.*)']);
 
 const isAdminRoute = createRouteMatcher(['/admin(.*)']);
 
 export default clerkMiddleware(async (auth, req) => {
+  console.log('running Clerk middleware for auth');
   // Restrict admin routes to users with specific permissions
   if (isAdminRoute(req)) {
-    await auth.protect((has) => {
-      return has({ role: 'admin' }) || has({ role: 'user' });
-    });
+    await auth.protect((has) => has({ permission: 'org:admin' }));
   }
   // Restrict organization routes to signed in users
-  if (isProtectedRoute(req)) await auth.protect();
+  if (isProtectedRoute(req)) {
+    await auth.protect();
+  }
 });
 
 export const config = {
