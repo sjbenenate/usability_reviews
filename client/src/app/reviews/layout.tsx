@@ -1,8 +1,13 @@
+import { Suspense } from 'react';
+import LoadingSkeleton from '@/components/loading';
+
 const ReviewLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <section>
       <h3>Review Layout Applied</h3>
-      <div>{children}</div>
+      <Suspense fallback={<LoadingSkeleton />}>
+        <div>{children}</div>
+      </Suspense>
     </section>
   );
 };
