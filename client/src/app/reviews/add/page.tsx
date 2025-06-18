@@ -1,8 +1,7 @@
-const AddReviewLayout = ({ children }: { children: React.ReactNode }) => {
+const AddReviewLayout = () => {
   return (
     <section>
       <h3>Add Your Review Here</h3>
-      <div>{children}</div>
     </section>
   );
 };
