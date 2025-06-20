@@ -31,7 +31,7 @@
 
   --brand-primary: 180 100% 50%;
 
-  --buttons: 217.2 91.2% 59.8%;
+  --action-button: 217.2 91.2% 59.8%;
 
   --radius: 0.5rem;
 
@@ -89,17 +89,19 @@
   --sidebar-border: 240 3.7% 15.9%;
   --sidebar-ring: 217.2 91.2% 59.8%;
 
-  --brand-primary: 180 100% 50%;
+  --brand-primary: hsl(180 100% 50%);
 
-  --buttons: 217.2 91.2% 59.8%;
+  --action-button:: 217.2 91.2% 59.8%;
 }
 
-@theme inline {
-  --color-buttons: var(--buttons);
+@theme {
+  --color-brand-primary: var(--brand-primary);
+  --color-action-button: var(--action-button);
 }
 
-@theme inline dark {
-  --color-buttons: var(--buttons);
+@theme dark {
+  --color-brand-primary: var(--brand-primary);
+  --color-action-button: var(--action-button);
 }
 
 /* Custom style classes */

@@ -33,6 +33,9 @@ const Home = async () => {
             <Link href="/reviews">Reviews Page</Link>
           </p>
         </div>
+        <div className="text-brand-primary">
+          This text should be in the brand color
+        </div>
       </main>
     </div>
   );
