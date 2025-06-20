@@ -6,7 +6,8 @@ import { useEffect, useState } from 'react';
 import { Moon, Sun } from 'lucide-react';
 import { useTheme } from 'next-themes';
 
-import { Button } from '@/components/ui/button';
+/*import { Button } from '@/components/ui/button';
+
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -39,7 +40,7 @@ function ThemeToggleDropdown() {
       </DropdownMenuContent>
     </DropdownMenu>
   );
-}
+}*/
 
 function ThemeToggleButton() {
   const { setTheme, resolvedTheme } = useTheme();
@@ -56,7 +57,7 @@ function ThemeToggleButton() {
 
   return (
     <button
-      className="fixed bottom-4 right-4 p-2 bg-buttons text-primary rounded"
+      className="fixed bottom-4 right-4 p-2 bg-action-button text-action-button-foreground rounded"
       onClick={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')}
     >
       {resolvedTheme === 'dark' ? <Moon /> : <Sun />}
