@@ -4,7 +4,8 @@ import Image from 'next/image';
 //import { Button } from '@/ui/button';
 //import { LogIn, LogOut, User, Home } from 'lucide-react';
 import AuthButtons from '@/components/AuthButtons';
-import { currentUser } from '@clerk/nextjs/server';
+//import { currentUser } from '@clerk/nextjs/server';
+import { ThemeToggle } from '@/components/ThemeToggle';
 
 const HomeLink = () => {
   return (
@@ -68,13 +69,14 @@ const Header = async () => {
     }
   };*/
 
-  const user = await currentUser();
-  console.log(user);
+  //const user = await currentUser();
+  //console.log(user);
 
   return (
     <header className="bg-gray-800 border-b border-gray-700 sticky top-0 z-50 shadow-md">
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         <HomeLink />
+        <ThemeToggle />
         <AuthButtons />
       </div>
     </header>
