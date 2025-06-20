@@ -5,6 +5,10 @@ import { ClerkProvider } from '@clerk/nextjs';
 import Header from '@/components/Header';
 import { ThemeProvider } from '@/components/theme/ThemeProvider';
 
+import { Toaster } from '@/components/ui/toaster';
+import { Toaster as Sonner } from '@/components/ui/sonner';
+import { TooltipProvider } from '@/components/ui/tooltip';
+
 const geistSans = Geist({
   variable: '--font-geist-sans',
   subsets: ['latin'],
@@ -33,8 +37,12 @@ export default function RootLayout({
       >
         <ClerkProvider>
           <ThemeProvider>
-            <Header />
-            {children}
+            <TooltipProvider>
+              <Toaster />
+              <Sonner />
+              <Header />
+              {children}
+            </TooltipProvider>
           </ThemeProvider>
         </ClerkProvider>
       </body>
