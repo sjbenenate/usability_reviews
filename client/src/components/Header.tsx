@@ -20,7 +20,7 @@ const HomeLink = () => {
           priority
         />
       </div>
-      <h1 className="text-xl font-bold text-brand-primary">ParaAccess</h1>
+      <h1 className="text-xl font-bold text-brand">ParaAccess</h1>
     </Link>
   );
 };
@@ -74,7 +74,7 @@ const Header = async () => {
 
   return (
     <header className="border-b sticky top-0 z-50 shadow-md">
-      <div className="container mx-auto px-4 py-4 flex items-center justify-between">
+      <div className="container mx-auto px-4 py-4 flex items-center justify-between bg-brand">
         <HomeLink />
         <ThemeToggle />
         <AuthButtons />

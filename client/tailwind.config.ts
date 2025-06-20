@@ -75,9 +75,9 @@ export default {
           border: 'hsl(var(--color-sidebar-border))',
           ring: 'hsl(var(--color-sidebar-ring))',
         },
-        'brand-primary': 'hsl(var(--color-brand-primary) / <alpha-value>)',
-        'brand-primary-foreground':
-          'hsl(var(--color-brand-primary-foreground) / <alpha-value>)',
+        brand: {
+          DEFAULT: 'hsl(var(--color-brand))',
+        },
       },
       borderRadius: {
         lg: 'var(--radius)',
