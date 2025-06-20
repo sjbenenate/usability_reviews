@@ -73,7 +73,7 @@ const Header = async () => {
   //console.log(user);
 
   return (
-    <header className="bg-gray-800 border-b border-gray-700 sticky top-0 z-50 shadow-md">
+    <header className="border-b sticky top-0 z-50 shadow-md">
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         <HomeLink />
         <ThemeToggle />

@@ -18,7 +18,7 @@ const Home = async () => {
       <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
         <h1>ParaAccess Reviews</h1>
         <Image
-          className="logo-color"
+          className="icon-brand-color"
           alt="wheelchair logo"
           src="/wheelchair-logo.svg"
           width={100}
