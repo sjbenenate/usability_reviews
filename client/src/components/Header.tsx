@@ -5,7 +5,7 @@ import Image from 'next/image';
 //import { LogIn, LogOut, User, Home } from 'lucide-react';
 import AuthButtons from '@/components/AuthButtons';
 //import { currentUser } from '@clerk/nextjs/server';
-import { ThemeToggle } from '@/components/ThemeToggle';
+import ThemeToggle from '@/components/theme/ThemeToggle';
 
 const HomeLink = () => {
   return (
@@ -74,7 +74,7 @@ const Header = async () => {
 
   return (
     <header className="border-b sticky top-0 z-50 shadow-md">
-      <div className="container mx-auto px-4 py-4 flex items-center justify-between bg-brand">
+      <div className="container mx-auto px-4 py-4 flex items-center justify-between bg-brand-primary">
         <HomeLink />
         <ThemeToggle />
         <AuthButtons />

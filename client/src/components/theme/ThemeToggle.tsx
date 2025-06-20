@@ -1,6 +1,8 @@
 'use client';
 
 import * as React from 'react';
+import { useEffect, useState } from 'react';
+
 import { Moon, Sun } from 'lucide-react';
 import { useTheme } from 'next-themes';
 
@@ -12,7 +14,7 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 
-export function ThemeToggle() {
+function ThemeToggleDropdown() {
   const { setTheme } = useTheme();
 
   return (
@@ -38,3 +40,28 @@ export function ThemeToggle() {
     </DropdownMenu>
   );
 }
+
+function ThemeToggleButton() {
+  const { setTheme, resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  // Fix hydration issue
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return null; // Avoids hydration mismatch on SSR
+  }
+
+  return (
+    <button
+      className="fixed bottom-4 right-4 p-2 bg-buttons text-primary rounded"
+      onClick={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')}
+    >
+      {resolvedTheme === 'dark' ? <Moon /> : <Sun />}
+    </button>
+  );
+}
+
+export default ThemeToggleButton;
