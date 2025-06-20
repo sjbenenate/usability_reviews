@@ -18,7 +18,7 @@ const Home = async () => {
       <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
         <h1>ParaAccess Reviews</h1>
         <Image
-          className="logo-color"
+          className="icon-brand-color"
           alt="wheelchair logo"
           src="/wheelchair-logo.svg"
           width={100}
@@ -32,6 +32,9 @@ const Home = async () => {
           <p>
             <Link href="/reviews">Reviews Page</Link>
           </p>
+        </div>
+        <div className="text-brand-primary">
+          This text should be in the brand color
         </div>
       </main>
     </div>
