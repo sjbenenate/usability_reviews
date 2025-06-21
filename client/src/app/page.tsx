@@ -2,16 +2,29 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { getUsers } from '@/lib/users';
 
+import { insertUser } from '@/api/database/users';
+
 const testAPIConnection = async () => {
   //const url = `${process.env.API_DOMAIN}/api/users`;
   //const res = await fetch(url, { cache: 'no-cache' });
-  const users = await getUsers();
-  console.log(users);
-  return users;
+  try {
+    const users = await getUsers();
+    console.log(users);
+    return users;
+  } catch {
+    console.log('error fetching users from Express server');
+    return null;
+  }
 };
 
 const Home = async () => {
   const apiData = await testAPIConnection();
+
+  const newUser = await insertUser({
+    username: 'testUserInsertion_0',
+    profileImage: 'img/src/here',
+  });
+  console.log(`Main page new user: ${newUser}`);
 
   return (
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">

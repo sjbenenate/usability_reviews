@@ -35,7 +35,7 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
 
-## Dev Shortcuts
+## Dev Tips
 
 ### Add new components from shadecn/ui
 
@@ -46,3 +46,8 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 ### Auth examples with Clerk
 
 - https://github.com/clerk/nextjs-auth-starter-template/blob/main/app/layout.tsx
+
+## Installing local Postgres db
+
+- Installer: https://www.postgresql.org/download/
+- Database GUI browser: https://www.pgadmin.org/
